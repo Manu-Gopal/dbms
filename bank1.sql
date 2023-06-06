@@ -8,7 +8,7 @@ create table account(account_no int, branch_name varchar(20), balance numeric(10
 create table depositor(customer_name varchar(20), account_no int);
 alter table branch add primary key(branch_name);
 insert into branch values('keezhillam','perumbavoor','loan'); 
-insert into branch values('mannor','muvattupuzha','security');
+insert into branch values('mannoor','muvattupuzha','security');
 insert into branch values('perumbavoor','perumbavoor','loan');
 insert into branch values('aluva','aluva','security');
 alter table customer add primary key(customer_name);
@@ -41,7 +41,7 @@ insert into depositor values('pranav',111);
 insert into depositor values('aswin',222);
 insert into depositor values('smith',333);
 insert into depositor values('hiran',444);
-select * from customer where customer_name not in(select customer_name from borrower); 
+select customer_name from customer where customer_name not in(select customer_name from borrower); 
 
 select customer_name from customer 
 where 
