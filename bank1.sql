@@ -51,4 +51,4 @@ customer_city = (select customer_city from customer where customer_name = "Smith
 and 
 customer_name <> "Smith";
 
-select branch_name from branch where customer_city = (select customer_city from customer where customer_city = "harison");
+select account.branch_name from account,customer,depositor where depositor.account_no= account.account_no and depositor.customer_name=customer.customer_name and customer_city  = "harison";
